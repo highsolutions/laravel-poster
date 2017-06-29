@@ -1,0 +1,26 @@
+{
+    "name": "highsolutions/laravel-poster",
+    "description": "A Laravel package for easy Slack notifications about posts published on subscribed Facebook's fanpages.",
+    "keywords": ["laravel", "posts", "facebook", "Slack", "notifications", "wall"],
+    "authors": [
+        {
+            "name": "HighSolutions",
+            "email": "adam@highsolutions.pl"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/support": "~5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "HighSolutions\\Poster\\": "src/"
+        }
+    },
+    "extra": {
+        "component": "package",
+        "frameworks": ["Laravel 5.4"]
+    },
+    "minimum-stability": "stable"
+}
