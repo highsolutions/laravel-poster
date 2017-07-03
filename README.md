@@ -18,6 +18,8 @@ Add the following line to the `require` section of your Laravel webapp's `compos
 
 Run `composer update` to install the package.
 
+//TODO: write about adding ServiceProvider
+
 //TODO: write about console command in scheduler
 
 Configuration
