@@ -68,6 +68,30 @@ Configuration
 | slack.default_channel                   | Default channel for notifications | ''            |
 | slack.webhook_url                       | Slack's webhook url               | ''            |
 
+Facebook lists are defined like:
+
+```php
+<?php
+
+return [
+    'socials' => [
+        'facebook' => [
+            'credentials' => [
+                // ...
+            ],
+            'list' => [
+                'highsolutions' => [
+                    'name' => 'HighSolutions daily',
+                    'channel' => '#general',
+                ],
+            ],
+        ],
+    ],
+
+    // ...
+];
+```
+
 Facebook app
 -------------
 
