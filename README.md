@@ -12,7 +12,7 @@ Add the following line to the `require` section of your Laravel webapp's `compos
 
 ```javascript
     "require": {
-        "HighSolutions/poster": "1.*"
+        "HighSolutions/Poster": "1.*"
     }
 ```
 
@@ -48,14 +48,14 @@ Remember to launch migration:
 Next step is to add cron task via Scheduler (`app\Console\Kernel.php`):
 
 ```php
-	protected function schedule(Schedule $schedule)
+    protected function schedule(Schedule $schedule)
     {
     	// ...
         $schedule->command('poster:fetch')->hourly();
     }
 ```
 
-Remember to launch cron tasks to artisan.
+Remember to assign cron tasks to artisan.
 
 Configuration
 -------------
@@ -84,6 +84,7 @@ return [
                     'name' => 'HighSolutions daily',
                     'channel' => '#general',
                 ],
+                // ...
             ],
         ],
     ],
