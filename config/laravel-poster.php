@@ -11,7 +11,10 @@ return [
 
     'socials' => [
     	'facebook' => [
-    		'token' => '',
+            'credentials' => [
+                'app_id' => '',
+                'app_secret' => '',
+            ],
     		'list' => [
                 
 	    	],

@@ -12,7 +12,7 @@ class CreateLaravelPosterTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('laravel_posters', function(Blueprint $table)
+        Schema::create('lp_posts', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('social', 50);
@@ -20,6 +20,16 @@ class CreateLaravelPosterTable extends Migration {
             $table->text('text');
             $table->string('identifier', 100);
             $table->dateTime('posted_at');
+            $table->timestamps();
+        });
+
+        Schema::create('lp_tokens', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('social', 50);
+            $table->string('token', 200);
+            $table->dateTime('expired_at');
+            $table->dateTime('notified_at')->nullable();
             $table->timestamps();
         });
 	}
@@ -31,7 +41,8 @@ class CreateLaravelPosterTable extends Migration {
 	 */
 	public function down()
 	{
-        Schema::dropIfExists('laravel_posters');
+        Schema::dropIfExists('lp_posts');
+        Schema::dropIfExists('lp_tokens');
 	}
 
 }

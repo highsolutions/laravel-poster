@@ -3,9 +3,12 @@
 namespace HighSolutions\Poster\Services\Socials;
 
 use HighSolutions\Poster\Models\FacebookPost;
+use HighSolutions\Poster\Models\FacebookSocialToken;
 
 class FacebookPoster extends AbstractPoster
 {
+
+	protected static $social = 'facebook';
 
 	public function __construct($params)
 	{
@@ -19,12 +22,27 @@ class FacebookPoster extends AbstractPoster
 
 	protected function getUrl($page)
 	{
-		return 'https://graph.facebook.com/v2.9/' . $page . '/?fields=posts&access_token='. $this->params['token'];
+		$token = $this->getToken();
+		return 'https://graph.facebook.com/v2.9/' . $page . '/?fields=posts&access_token='. $token;
+	}
+
+	protected function getToken()
+	{
+		$token = FacebookSocialToken::getToken();
+		if($token != null)
+			return $token->token;
+
+		return null;
 	}
 
 	protected function save($page, $json)
 	{
-		$data = $json->posts->data;
+		$data = collect($json->posts->data)->reverse();
 		return FacebookPost::createNewPosts($page, $data);
+	}
+
+	protected function isEmpty($page)
+	{
+		return FacebookPost::getLastPublishedDate($page) === null;
 	}
 }

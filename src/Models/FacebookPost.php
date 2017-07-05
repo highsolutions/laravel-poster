@@ -11,7 +11,7 @@ class FacebookPost extends Model
 {
 	use PostTrait, Notifiable;
 
-	protected $table = 'laravel_posters';
+	protected $table = 'lp_posts';
 	protected $dates = ['posted_at'];
 	protected $guarded = [];
 	protected static $social = 'facebook';

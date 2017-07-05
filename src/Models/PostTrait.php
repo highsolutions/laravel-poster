@@ -14,8 +14,7 @@ trait PostTrait
 			if(static::isOldPost($lastPublishedDate, $row))
 				continue;
 			
-			if($lastPublishedDate !== null)
-				$new []= static::createNew($page, $row);
+			$new []= static::createNew($page, $row);
 		}
 
 		return $new;

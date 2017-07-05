@@ -16,11 +16,29 @@ class PosterServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->_loadViews();
+
+        $this->_manageRoutes();
+
         $this->_basicRegister();
 
         $this->_commandsRegister();        
 
         $this->_managerRegister();    
+    }
+
+    protected function _loadViews()
+    {
+        $viewPath = __DIR__.'/../resources/views';
+        $this->loadViewsFrom($viewPath, 'laravel-poster');
+        $this->publishes([
+            $viewPath => resource_path('assets/views/vendor/laravel-poster'),
+        ], 'views');
+    }
+
+    protected function _manageRoutes()
+    {
+        include __DIR__ . '/../routes/routes.php';
     }
 
     private function _basicRegister() 
