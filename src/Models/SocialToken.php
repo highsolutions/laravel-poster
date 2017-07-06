@@ -26,6 +26,8 @@ class SocialToken extends Model
 
     public function isNotifiedToday()
     {
+        if($this->notified_at === null)
+            return false;
     	return $this->notified_at->isToday();
     }
 
