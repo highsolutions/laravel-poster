@@ -13,7 +13,7 @@ trait PostTrait
 		foreach($data as $row) {
 			if(static::isOldPost($lastPublishedDate, $row))
 				continue;
-			
+
 			$new []= static::createNew($page, $row);
 		}
 

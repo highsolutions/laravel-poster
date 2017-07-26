@@ -18,7 +18,14 @@ class FacebookPost extends Model
 
 	protected static function isOldPost($lastPublishedDate, $row)
 	{
-		return $lastPublishedDate !== null && $lastPublishedDate >= Carbon::parse($row->created_time);
+		return $lastPublishedDate !== null && $lastPublishedDate >= static::parseDate($row->created_time);
+	}
+
+	protected static function parseDate($date)
+	{
+		$parsed = Carbon::parse($date);
+		$parsed->timezone = config('app.timezone');
+		return $parsed;
 	}
 
 	protected static function createNew($page, $row)
@@ -28,7 +35,7 @@ class FacebookPost extends Model
 			'address' => $page,
 			'text' => $row->message,
 			'identifier' => explode('_', $row->id)[1],
-			'posted_at' => Carbon::parse($row->created_time),
+			'posted_at' => static::parseDate($row->created_time),
 		]);
 	}
 

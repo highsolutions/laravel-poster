@@ -66,7 +66,7 @@ abstract class AbstractPoster
 
 	protected function sendNotificationAboutToken($params)
 	{
-		$token = FacebookSocialToken::getToken();
+		$token = $this->getSocialToken();
 		if(!$token->isNotifiedToday()) {
 			$token->notify(new SlackInvalidNotification($params));
 			$token->notified();
@@ -75,7 +75,7 @@ abstract class AbstractPoster
 
 	protected function checkTokens($params)
 	{
-		$token = FacebookSocialToken::getToken();
+		$token = $this->getSocialToken();
 		if(!$token->isNotifiedToday() && $token->isExpiringSoon()) {
 			$token->notify(new SlackInvalidNotification($params));
 			$token->notified();

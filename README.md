@@ -111,6 +111,9 @@ For now there is no way to make it fully automatic. Thanks to Facebook.
 Changelog
 ---------
 
+1.0.4
+- Fix timezone problems
+
 1.0.3
 - Little fixes on readme
 - Check if SocialToken->notified_at is null
@@ -126,6 +129,7 @@ Roadmap
 * Not only Facebook fanpages support.
 * Not only Slack notifications support.
 * Trigger events
+* Comments
 * Unit tests!
 
 Credits

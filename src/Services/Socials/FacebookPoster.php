@@ -26,9 +26,14 @@ class FacebookPoster extends AbstractPoster
 		return 'https://graph.facebook.com/v2.9/' . $page . '/?fields=posts&access_token='. $token;
 	}
 
+	protected function getSocialToken()
+	{
+		return FacebookSocialToken::getToken();
+	}
+
 	protected function getToken()
 	{
-		$token = FacebookSocialToken::getToken();
+		$token = $this->getSocialToken();
 		if($token != null)
 			return $token->token;
 
