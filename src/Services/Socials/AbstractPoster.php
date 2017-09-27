@@ -7,6 +7,7 @@ use HighSolutions\Poster\Exceptions\InvalidSocialTokenException;
 use HighSolutions\Poster\Models\FacebookSocialToken;
 use HighSolutions\Poster\Notifications\SlackInvalidNotification;
 use HighSolutions\Poster\Notifications\SlackNotification;
+use GuzzleHttp\Exception\ConnectException;
 
 abstract class AbstractPoster 
 {
@@ -48,7 +49,10 @@ abstract class AbstractPoster
 			return;
 		
 		foreach($posts as $post) {
-			$post->notify(new SlackNotification($params));
+			try {
+				$post->notify(new SlackNotification($params));			
+			} catch (ConnectException $e) {
+			}			
 		}
 
 		$this->checkTokens($params);
@@ -68,8 +72,11 @@ abstract class AbstractPoster
 	{
 		$token = $this->getSocialToken();
 		if(!$token->isNotifiedToday()) {
-			$token->notify(new SlackInvalidNotification($params));
-			$token->notified();
+			try {
+				$token->notify(new SlackInvalidNotification($params));
+				$token->notified();
+			} catch (ConnectException $e) {
+			}
 		}
 	}
 
@@ -77,8 +84,11 @@ abstract class AbstractPoster
 	{
 		$token = $this->getSocialToken();
 		if(!$token->isNotifiedToday() && $token->isExpiringSoon()) {
-			$token->notify(new SlackInvalidNotification($params));
-			$token->notified();
+			try {
+				$token->notify(new SlackInvalidNotification($params));
+				$token->notified();
+			} catch (ConnectException $e) {
+			}			
 		}
 	}
 
