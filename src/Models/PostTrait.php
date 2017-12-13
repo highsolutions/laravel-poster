@@ -11,7 +11,7 @@ trait PostTrait
 		$lastPublishedDate = static::getLastPublishedDate($page);
 
 		foreach($data as $row) {
-			if(static::isOldPost($lastPublishedDate, $row))
+			if(static::isOldPost($lastPublishedDate, $row) || static::isWrongPost($row))
 				continue;
 
 			$new []= static::createNew($page, $row);

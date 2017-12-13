@@ -20,6 +20,11 @@ class FacebookPost extends Model
 	{
 		return $lastPublishedDate !== null && $lastPublishedDate >= static::parseDate($row->created_time);
 	}
+	
+	protected static function isWrongPost($row)
+	{
+		return !isset($row->message);
+	}
 
 	protected static function parseDate($date)
 	{
@@ -29,7 +34,7 @@ class FacebookPost extends Model
 	}
 
 	protected static function createNew($page, $row)
-	{
+	{			
 		return static::create([
 			'social' => static::$social,
 			'address' => $page,

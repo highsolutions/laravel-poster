@@ -112,6 +112,9 @@ For now there is no way to make it fully automatic. Thanks to Facebook.
 Changelog
 ---------
 
+1.0.6
+- Handle problem when post is share of another post
+
 1.0.5
 - Support Package Auto-Discovery
 
@@ -139,4 +142,4 @@ Roadmap
 Credits
 -------
 
-This package is developed by [HighSolutions](http://highsolutions.pl), software house from Poland in love in Laravel.
+This package is developed by [HighSolutions](https://highsolutions.org), software house from Poland in love in Laravel.
