@@ -12,7 +12,7 @@ Add the following line to the `require` section of your Laravel webapp's `compos
 
 ```javascript
     "require": {
-        "HighSolutions/Poster": "1.*"
+        "highsolutions/laravel-poster": "1.*"
     }
 ```
 
