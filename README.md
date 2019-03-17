@@ -112,6 +112,9 @@ For now there is no way to make it fully automatic. Thanks to Facebook.
 Changelog
 ---------
 
+1.0.7
+- Debug information about wrong JSON was fired when JSON was valid
+
 1.0.6
 - Handle problem when post is share of another post
 

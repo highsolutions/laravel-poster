@@ -17,7 +17,7 @@ class FacebookPoster extends AbstractPoster
 
 	protected function isResponseInvalid($json)
 	{
-		return isset($json->posts) && isset($json->posts->data);
+		return !isset($json->posts) || !isset($json->posts->data);
 	}
 
 	protected function getUrl($page)
