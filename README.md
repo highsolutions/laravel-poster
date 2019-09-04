@@ -112,6 +112,9 @@ For now there is no way to make it fully automatic. Thanks to Facebook.
 Changelog
 ---------
 
+1.1.0
+- Support Laravel 6.0
+
 1.0.7
 - Debug information about wrong JSON was fired when JSON was valid
 
