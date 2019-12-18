@@ -14,6 +14,10 @@
         font-family: 'Lato';
       }
 
+      body a {
+          color:#B0BEC5;
+      }
+
       .container {
         text-align: center;
         display: table-cell;
