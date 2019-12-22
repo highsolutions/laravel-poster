@@ -65,7 +65,7 @@ Configuration
 |-----------------------------------------|-----------------------------------|---------------|
 | socials.facebook.credentials.app_id     | Facebook's app identifier         | ''            |
 | socials.facebook.credentials.app_secret | Facebook's app secret             | ''            |
-| socials.facebook.api_version            | Graph API version                 | ''            |
+| socials.facebook.api_version            | Graph API version                 | 'v5.0'            |
 | socials.facebook.list                   | List of Facebook pages            | []            |
 | slack.default_channel                   | Default channel for notifications | ''            |
 | slack.webhook_url                       | Slack's webhook url               | ''            |
