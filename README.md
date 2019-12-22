@@ -114,10 +114,13 @@ Changelog
 ---------
 1.2.2
 - Set up Graph API version
+
 1.2.1
 - Common style of hyperlinks
+
 1.2.0
 - Styling facebook button according to brandbook
+
 1.1.0
 - Support Laravel 6.0
 
