@@ -17,7 +17,8 @@ return [
             ],
     		'list' => [
                 
-	    	],
+            ],
+            'api_version' => 'v5.0',
 	    ],
     ],
 

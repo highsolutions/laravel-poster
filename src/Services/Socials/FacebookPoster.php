@@ -23,7 +23,8 @@ class FacebookPoster extends AbstractPoster
 	protected function getUrl($page)
 	{
 		$token = $this->getToken();
-		return 'https://graph.facebook.com/v2.9/' . $page . '/?fields=posts&access_token='. $token;
+		$version = $this->getVersion();
+		return 'https://graph.facebook.com/'.$version.'/' . $page . '/?fields=posts&access_token='. $token;
 	}
 
 	protected function getSocialToken()
@@ -49,5 +50,10 @@ class FacebookPoster extends AbstractPoster
 	protected function isEmpty($page)
 	{
 		return FacebookPost::getLastPublishedDate($page) === null;
+	}
+
+	protected function getVersion()
+	{
+		return config('laravel-poster.socials.facebook.api_version');
 	}
 }
