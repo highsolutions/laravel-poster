@@ -65,7 +65,7 @@ Configuration
 |-----------------------------------------|-----------------------------------|---------------|
 | socials.facebook.credentials.app_id     | Facebook's app identifier         | ''            |
 | socials.facebook.credentials.app_secret | Facebook's app secret             | ''            |
-| socials.facebook.api_version            | Graph API version                 | ''            |
+| socials.facebook.api_version            | Graph API version                 | 'v5.0'            |
 | socials.facebook.list                   | List of Facebook pages            | []            |
 | slack.default_channel                   | Default channel for notifications | ''            |
 | slack.webhook_url                       | Slack's webhook url               | ''            |
@@ -114,10 +114,13 @@ Changelog
 ---------
 1.2.2
 - Set up Graph API version
+
 1.2.1
 - Common style of hyperlinks
+
 1.2.0
 - Styling facebook button according to brandbook
+
 1.1.0
 - Support Laravel 6.0
 
