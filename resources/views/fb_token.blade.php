@@ -90,9 +90,9 @@
       
       window.fbAsyncInit = function() {
         FB.init({
-          appId: '1930445737237719',
+          appId: "{{ config('laravel-poster.socials.facebook.credentials.app_id') }}",
           cookie: true,
-          version: 'v2.9'
+          version: "{{ config('laravel-poster.socials.facebook.api_version') }}"
         });
       };
 
