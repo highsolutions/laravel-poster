@@ -112,6 +112,10 @@ For now there is no way to make it fully automatic. Thanks to Facebook.
 
 Changelog
 ---------
+
+1.3.0
+- Support Laravel 7.x and 8.x
+
 1.2.2
 - Set up Graph API version
 
@@ -120,9 +124,6 @@ Changelog
 
 1.2.0
 - Styling facebook button according to brandbook
-
-1.2.0
-- Support Laravel 7.x and 8.x
 
 1.1.0
 - Support Laravel 6.0
