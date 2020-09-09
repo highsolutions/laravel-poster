@@ -112,6 +112,9 @@ For now there is no way to make it fully automatic. Thanks to Facebook.
 Changelog
 ---------
 
+1.2.0
+- Support Laravel 7.x and 8.x
+
 1.1.0
 - Support Laravel 6.0
 
